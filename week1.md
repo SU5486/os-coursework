@@ -24,7 +24,7 @@ The Ubuntu Server virtual machine is configured using VirtualBox NAT networking.
 
 This configuration allows secure remote access to the server while keeping it isolated from the external network. NAT networking also allows the server to access the internet for updates.
 
-![Network Configuration](assets/week1-network.png)
+![Network Configuration](assests/week1-network.png)
 
 uname -a
 assets/week1-uname.png
