@@ -63,7 +63,7 @@ lsb_release -a
 
 ---
 
-# 🅶 STEP G — Reflection 
+ 
 
 Add this at the end:
 
