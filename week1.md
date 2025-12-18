@@ -2,7 +2,7 @@
 
 ## 1. System Architecture
 
-![System Architecture](assets/week1-architecture.png)
+![System Architecture] (assets/week1-architecture.png)
 
 The system uses a dual-machine architecture. A Windows workstation is used for administration, while Ubuntu Server runs as a headless virtual machine inside VirtualBox. The server is accessed remotely using SSH, which reflects real-world server management practices.
 
