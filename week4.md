@@ -24,17 +24,17 @@ Evidence:
 *sudo nano /etc/ssh/sshd_config*
 
 #### Relevant configuration before changes:
-![](assests/Screenshot 2025-12-19 054433.png)
+![](assests/Screenshot2025-12-19054433.png)
 
 #### Configuration after changes:
-![](assests/Screenshot 2025-12-19 054824.png)
+![](assests/Screenshot2025-12-19054824.png)
 
 These settings disable root login while enabling public key authentication. Password authentication remained enabled to prevent accidental lockout during coursework testing.
 
 The SSH service was restarted to apply changes:
 
 *sudo systemctl restart ssh*
-![](assests/Screenshot 2025-12-19 054917.png)
+![](assests/Screenshot2025-12-19054917.png)
 
 ## 3. Firewall Configuration (Restricted SSH Access)
 
@@ -43,6 +43,7 @@ A firewall was configured using UFW (Uncomplicated Firewall) to restrict incomin
 Because the server is hosted in VirtualBox using NAT with port forwarding, the trusted source IP is the localhost address.
 
 Firewall rules applied:
+
 *sudo ufw allow from 127.0.0.1 to any port 22
 sudo ufw enable*
 
@@ -55,16 +56,18 @@ Firewall ruleset verification:
 
 This confirms that SSH access is restricted to a single trusted source.
 Evidence:
-![](assests/Screenshot 2025-12-19 055050.png)
+![](assests/Screenshot2025-12-19055050.png)
 
 ## 4. User and Privilege Management
 
 To follow the principle of least privilege, a non-root administrative user named **admin** was created.
 
 User creation:
+
 *sudo adduser admin*
 
 Assigning administrative privileges:
+
 *sudo usermod -aG sudo admin*
 
 
@@ -75,4 +78,4 @@ Group membership was verified using:
 
 This confirms that the user has controlled administrative access via **sudo**.
 Evidence:
-![](assests/Screenshot 2025-12-19 055158.png)
+![](assests/Screenshot2025-12-19055158.png)
