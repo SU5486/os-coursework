@@ -1,6 +1,6 @@
 #  Coursework Journal
-Sadun Sudu Dewage
-Student ID: A00019034
+* Sadun Sudu Dewage
+* Student ID: A00019034
 
 ## Contents
 - [Week 1 – Planning & Architecture](week1.html)
