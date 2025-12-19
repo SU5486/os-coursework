@@ -1,10 +1,78 @@
-# Week 4 – Initial System Configuration and Security
+# Week 4 – Initial System Configuration and Security Implementation
 
-In Week 4, I configured the Ubuntu Server virtual machine and focused on basic security setup.
+## 1. Introduction
 
-I installed and enabled the OpenSSH server to allow secure remote access to the system.
-SSH access was tested successfully from the host machine using port forwarding.
+The objective of Week 4 was to deploy the Ubuntu Server and implement foundational security controls. This phase focused on enabling secure remote administration, managing user privileges, and restricting network access in line with best practices.
 
-I also reviewed the SSH configuration to understand authentication methods such as
-password authentication, public key authentication, and root login restrictions.
+All configuration tasks were carried out remotely via SSH from the Windows workstation, in compliance with the administrative constraint specified in the coursework brief.
 
+---
+
+## 2. SSH Configuration with Key-Based Authentication
+
+Secure Shell (SSH) is used as the primary method of remote administration. SSH provides encrypted communication between the workstation and the server.
+
+Key-based authentication was enabled to improve security by reducing reliance on passwords and mitigating brute-force attacks.
+
+*ssh admin@127.0.0.1 -p 2222*
+This command was used to successfully establish a remote SSH session from Windows PowerShell.
+Evidence:
+![](assests/week4-sshlogin.png)
+
+### SSH configuration file:
+
+*sudo nano /etc/ssh/sshd_config*
+
+#### Relevant configuration before changes:
+![](assests/Screenshot 2025-12-19 054433.png)
+
+#### Configuration after changes:
+![](assests/Screenshot 2025-12-19 054824.png)
+
+These settings disable root login while enabling public key authentication. Password authentication remained enabled to prevent accidental lockout during coursework testing.
+
+The SSH service was restarted to apply changes:
+
+*sudo systemctl restart ssh*
+![](assests/Screenshot 2025-12-19 054917.png)
+
+## 3. Firewall Configuration (Restricted SSH Access)
+
+A firewall was configured using UFW (Uncomplicated Firewall) to restrict incoming connections. Only SSH traffic from the trusted workstation was permitted.
+
+Because the server is hosted in VirtualBox using NAT with port forwarding, the trusted source IP is the localhost address.
+
+Firewall rules applied:
+*sudo ufw allow from 127.0.0.1 to any port 22
+sudo ufw enable*
+
+
+All other incoming connections are denied by default.
+
+Firewall ruleset verification:
+*sudo ufw status verbose*
+
+
+This confirms that SSH access is restricted to a single trusted source.
+Evidence:
+![](assests/Screenshot 2025-12-19 055050.png)
+
+## 4. User and Privilege Management
+
+To follow the principle of least privilege, a non-root administrative user named **admin** was created.
+
+User creation:
+*sudo adduser admin*
+
+Assigning administrative privileges:
+*sudo usermod -aG sudo admin*
+
+
+Group membership was verified using:
+
+*groups admin*
+
+
+This confirms that the user has controlled administrative access via **sudo**.
+Evidence:
+![](assests/Screenshot 2025-12-19 055158.png)
