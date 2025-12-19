@@ -33,7 +33,7 @@ A successful login confirmed:
 The SSH service was checked to ensure it is running correctly and listening for incoming connections.
 
 *sudo systemctl status ssh*
-![](Screenshot2025-12-19050029.png)
+![](assests/Screenshot2025-12-19050029.png)
 
 The output confirmed that the SSH service is active and running.
 
