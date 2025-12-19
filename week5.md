@@ -9,10 +9,10 @@ This week focused on implementing advanced security controls and monitoring capa
 Unattended upgrades were enabled to ensure security patches are applied regularly.
 
 **Evidence**
-- ![Enable unattended upgrades](assets/week5-unattended-enable.png)
-- ![20auto-upgrades](assets/week5-20auto-upgrades.png)
-- ![50unattended-upgrades](assets/week5-50unattended-upgrades.png)
-- ![Dry run test](assets/week5-unattended-dryrun.png)
+- ![Enable unattended upgrades](assests/week5-unattended-enable.png)
+- ![20auto-upgrades](assests/week5-20auto-upgrades.png)
+- ![50unattended-upgrades](assests/week5-50unattended-upgrades.png)
+- ![Dry run test](assests/week5-unattended-dryrun.png)
 
 ---
 
@@ -20,8 +20,8 @@ Unattended upgrades were enabled to ensure security patches are applied regularl
 AppArmor was verified as active and a service profile was placed into enforce mode to restrict application permissions.
 
 **Evidence**
-- ![AppArmor status](assets/week5-apparmor-status.png)
-- ![Nginx enforce](assets/week5-apparmor-nginx-enforce.png)
+- ![AppArmor status](assests/week5-apparmor-status.png)
+- ![Nginx enforce](assests/week5-apparmor-nginx-enforce.png)
 
 ---
 
@@ -29,9 +29,9 @@ AppArmor was verified as active and a service profile was placed into enforce mo
 fail2ban was configured to protect SSH by banning repeated failed login attempts. A local jail configuration was created and the sshd jail status was verified.
 
 **Evidence**
-- ![jail.local config](assets/week5-jail-local.png)
-- ![fail2ban service](assets/week5-fail2ban-status.png)
-- ![sshd jail status](assets/week5-fail2ban-sshd.png)
+- ![jail.local config](assests/week5-jail-local.png)
+- ![fail2ban service](assests/week5-fail2ban-status.png)
+- ![sshd jail status](assests/week5-fail2ban-sshd.png)
 
 ---
 
@@ -39,7 +39,7 @@ fail2ban was configured to protect SSH by banning repeated failed login attempts
 auditd was enabled to support security monitoring by recording key system events.
 
 **Evidence**
-- ![auditd status](assets/week5-auditd-status.png)
+- ![auditd status](assests/week5-auditd-status.png)
 
 ---
 
@@ -47,7 +47,7 @@ auditd was enabled to support security monitoring by recording key system events
 A script was created to check the security baseline and report the current configuration of SSH, firewall, AppArmor, fail2ban, and updates.
 
 **Evidence**
-- ![security-baseline run](assets/week5-security-baseline-run.png)
+- ![security-baseline run](assests/week5-security-baseline-run.png)
 
 ---
 
@@ -55,7 +55,7 @@ A script was created to check the security baseline and report the current confi
 A monitoring script was run from the Windows workstation to collect CPU load, memory usage, and disk utilisation at intervals over SSH. The CSV output will be reused in Week 6 for graphs and comparisons.
 
 **Evidence**
-- ![monitor script run](assets/week5-monitor-script-run.png)
+- ![monitor script run](assests/week5-monitor-script-run.png)
 
 ---
 
