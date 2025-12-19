@@ -33,14 +33,12 @@ A successful login confirmed:
 The SSH service was checked to ensure it is running correctly and listening for incoming connections.
 
 *sudo systemctl status ssh*
-
-![status](assests/Screenshot2025-12-19050029.png)
+![](assests/Screenshot2025-12-19050029.png)
 
 The output confirmed that the SSH service is active and running.
 
 *ss -tlnp | grep :22*
-
-![listen](assests/Screenshot2025-12-19050122.png)
+![](assests/Screenshot2025-12-19050122.png)
 
 This command confirmed that the server is listening on port 22 for SSH connections.
 
