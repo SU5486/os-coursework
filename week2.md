@@ -1,55 +1,73 @@
-# Week 2 – Security Planning and Threat Model
+# Week 2 – Security Planning and Testing Methodology
 
-## 1. Security Objectives
+## 1. Introduction
 
-The main security objective for this system is to protect the Ubuntu Server from unauthorised access while allowing legitimate remote administration. As the server is accessible over a network, strong access control and secure communication are essential.
+The focus of this part was to plan a secure baseline for the Ubuntu Server and to design a performance testing methodology. No system configuration changes were implemented during this phase. Instead, potential risks were identified and appropriate security controls were planned to guide later implementation.
 
-Another objective is to minimise potential attack surfaces by disabling unnecessary services and following the principle of least privilege. This ensures that users only have access to the permissions required to perform their tasks.
-
----
-
-## 2. Threat Identification
-
-Several potential security threats were identified during the planning stage. These include unauthorised SSH access, brute-force login attempts, and privilege escalation attacks. As the server is managed remotely, SSH represents the primary attack vector.
-
-There is also a risk of misconfiguration, which could expose services unintentionally or allow insecure authentication methods. Human error is therefore considered a significant threat.
+This planning stage ensures that security and performance considerations are addressed in a structured way before any advanced configuration is applied.
 
 ---
 
-## 3. User and Access Management
+## 2. Security Objectives
 
-To reduce security risks, the system is designed to use a non-root administrative user for day-to-day management. Direct root login is avoided to prevent accidental system damage and to reduce the impact of a compromised account.
+The primary security objective is to protect the server from unauthorised access while still allowing legitimate remote administration. As the server is accessed remotely using SSH, strong authentication and access control are essential.
 
-Administrative privileges are granted using the sudo mechanism, which allows actions to be logged and controlled. This approach follows standard Linux security best practices.
-
----
-
-## 4. Authentication Strategy
-
-SSH is selected as the primary method of remote access due to its strong encryption and widespread industry use. Password-based authentication is initially enabled to allow access during setup, with the intention of enforcing stronger authentication methods in later weeks.
-
-The use of SSH keys is planned to further improve security by eliminating password-based logins. This reduces the risk of brute-force attacks and credential theft.
+Another objective is to reduce the system’s attack surface by limiting network exposure, restricting user privileges, and applying industry-standard security practices.
 
 ---
 
-## 5. Network Security Considerations
+## 3. Performance Testing Plan
 
-The server operates behind a NAT network provided by VirtualBox, which limits direct exposure to external networks. Port forwarding is configured explicitly for SSH access, ensuring that only required ports are accessible.
+Performance testing will be carried out remotely from the workstation using SSH. Monitoring will be performed while different workloads are executed on the server to observe how system resources are used under varying conditions.
 
-A firewall strategy is planned using UFW to control incoming and outgoing traffic. Only essential services will be permitted, reducing the system’s overall attack surface.
+The following performance metrics will be monitored:
+- CPU usage
+- Memory usage
+- Disk I/O performance
+- Network throughput and latency
+
+Monitoring tools such as `top`, `htop`, `vmstat`, `iostat`, and network utilities will be used to observe system behaviour in real time. Performance data will be collected during baseline testing, under application load, and after applying optimisation changes.
+
+All monitoring activities will be conducted remotely via SSH, reflecting real-world server administration practices.
 
 ---
 
-## 6. Security Tools and Controls
+## 4. Security Configuration Checklist
 
-Ubuntu Server includes built-in security tools that are planned for use throughout the coursework. These include OpenSSH for secure access, UFW for firewall management, and system logging for monitoring administrative actions.
+The following checklist outlines the planned security controls that will be implemented in later weeks of the coursework.
 
-Regular updates are also considered part of the security plan to ensure vulnerabilities are patched in a timely manner.
+| Security Area | Planned Control |
+|--------------|----------------|
+| SSH Hardening | Disable root login and restrict access to authorised users |
+| Firewall Configuration | Use UFW to allow only essential incoming connections |
+| Mandatory Access Control | Apply AppArmor to restrict application permissions |
+| Automatic Updates | Enable automatic installation of security updates |
+| User Privilege Management | Use non-root administrative users with sudo access |
+| Network Security | Use NAT networking and controlled port forwarding |
 
 ---
 
-## 7. Security Planning Summary
+## 5. Threat Model
 
-This week focused on identifying potential risks and planning appropriate security controls before system implementation. By defining users, access methods, and network restrictions early, the system is prepared for secure deployment.
+Several potential security threats were identified along with planned mitigation strategies.
 
-The security decisions made in this week guide the configuration tasks completed in later weeks, ensuring a structured and consistent approach to system security.
+| Threat | Description | Mitigation Strategy |
+|------|------------|-------------------|
+| Brute-force SSH attacks | Repeated login attempts to gain unauthorised access | Enforce strong authentication and limit SSH access |
+| Privilege escalation | A user gains higher permissions than intended | Apply least-privilege principles and sudo controls |
+| Misconfiguration | Incorrect system settings expose vulnerabilities | Follow security checklists and verify configurations |
+| Unpatched vulnerabilities | Outdated software contains known security flaws | Enable automatic security updates |
+
+---
+
+## 6. Testing Methodology Summary
+
+Security and performance testing will follow a structured approach. Baseline measurements will be recorded before running workloads, followed by monitoring during active load. Results will then be compared after applying optimisation or security changes.
+
+This approach allows the impact of each configuration decision to be measured and evaluated using quantitative data.
+
+---
+
+## 7. Reflection
+
+This week highlighted the importance of planning security and performance strategies before implementing system changes. Identifying potential threats early helped clarify which security controls are necessary and why they are important. Designing the performance testing methodology in advance also ensures that later analysis is consistent and meaningful.
