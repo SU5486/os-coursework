@@ -27,19 +27,19 @@ This configuration allows secure remote access to the server while keeping it is
 ![Network Configuration](assests/week1-network.png)
 
 uname -a
-![](assets/week1-uname.png)
+![](assests/week1-uname.png)
 
 free -h
-![]assets/week1-memory.png
+![](assests/week1-memory.png)
 
 df -h
-![]assets/week1-disk.png
+![](assests/week1-disk.png)
 
 ip addr
-![]assets/week1-network-info.png
+![](assests/week1-network-info.png)
 
 lsb_release -a
-![]assets/week1-os.png
+![](assests/week1-os.png)
 
 ## 5. Baseline System Information
 
