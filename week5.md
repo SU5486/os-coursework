@@ -11,7 +11,6 @@ Unattended upgrades were enabled to ensure security patches are applied regularl
 **Evidence**
 - ![Enable unattended upgrades](assests/week5-unattended-enable.png)
 - ![20auto-upgrades](assests/week5-20auto-upgrades.png)
-- ![50unattended-upgrades](assests/week5-50unattended-upgrades.png)
 - ![Dry run test](assests/week5-unattended-dryrun.png)
 
 ---
