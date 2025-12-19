@@ -26,48 +26,27 @@ This configuration allows secure remote access to the server while keeping it is
 
 ![Network Configuration](assests/week1-network.png)
 
-uname -a
-![](assests/week1-uname.png)
-
-free -h
-![](assests/week1-memory.png)
-
-df -h
-![](assests/week1-disk.png)
-
-ip addr
-![](assests/week1-network-info.png)
-
-lsb_release -a
-![](assests/week1-os.png)
-
 ## 5. Baseline System Information
 
 The following command-line tools were used to document the initial system state.
 
-### Kernel and System Information
-```bash
+#### Kernel and System Information
 uname -a
-
-Memory Usage
+![](assests/week1-uname.png)
+#### Memory Usage
 free -h
-
-Disk Usage
+![](assests/week1-memory.png)
+#### Disk Usage
 df -h
-
-Network Interfaces
+![](assests/week1-disk.png)
+#### Network Interfaces
 ip addr
-
-Operating System Version
+![](assests/week1-network-info.png)
+#### Operating System Version
 lsb_release -a
 
----
+![](assests/week1-os.png)
 
- 
-
-Add this at the end:
-
-```md
 ## 6. Reflection
 
 This week helped me understand the importance of planning before configuring a server system. Setting up a headless Ubuntu Server and accessing it remotely showed how real servers are managed in practice. I also became more comfortable using basic Linux command-line tools, which will be important for the later stages of the coursework.
