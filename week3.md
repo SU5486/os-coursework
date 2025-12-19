@@ -31,9 +31,9 @@ The selected applications are lightweight, widely used, and suitable for command
 
 All applications will be installed remotely via SSH using the Ubuntu package manager.
 
+*sudo apt update*
 
-sudo apt update
-sudo apt install stress-ng fio iperf3 nginx -y 
+*sudo apt install stress-ng fio iperf3 nginx -y* 
 
 These commands ensure consistent and repeatable installation of testing tools.
 
